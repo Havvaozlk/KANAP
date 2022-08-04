@@ -1,4 +1,4 @@
-//fonction pour récupérer les données de l'API
+// RECUPERATION DES DONNEES DE L'API
 fetch("http://localhost:3000/api/products")
 .then((res) => {
     if (res.ok) {
