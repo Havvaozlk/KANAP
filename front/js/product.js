@@ -1,8 +1,8 @@
-// var str = window.location.href;
-// var url = new URL(str);
-// console.log(str);
-// var idProduct = new URLSearchParams(url.search);
-// console.log(idProduct);
+var str = window.location.href;
+var url = new URL(str);
+console.log(str);
+var idProduct = url.search.substring(1,33);
+console.log(idProduct);
 
 //INSERER LE TITRE
 let title = document.querySelector('#title');
@@ -23,6 +23,7 @@ for ( let i = 0; i < product.colors.lenght; i++) {
    colors.appendChild(color);
    color.setAttribute('value', product.colors[i])
 }
+
 
 
 
