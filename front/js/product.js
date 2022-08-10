@@ -39,3 +39,32 @@ async function getProduct() {
 }
 
 getProduct();
+
+//AJOUT AU PANIER
+function addToCart() {
+    let button = document.querySelector('#addToCart');
+    let quantity = document.querySelector('#quantity');
+    let id = idProduct;
+    let img = productImg.src;
+
+    button.addEventListener('click', () => {
+        if (quantity.value > 0 && quantity.value < 100 && quantity.value != "") {
+            const productAdded = {
+                productName: title.textContent,
+                productId: idProduct,
+                productImg: productImg.src,
+                productColor: colors.value,
+                productQuantity: quantity.value,
+                productPrice: price.textContent,
+            }
+            var storedProduct = JSON.stringify(productAdded);
+            localStorage.setItem('product', storedProduct);
+            console.log(localStorage);
+            
+        } else {
+            console.log('erreur');
+        }
+
+    })
+}
+addToCart();
